@@ -9,6 +9,17 @@
 [![AI Reasoning](https://img.shields.io/badge/Reasoning-IBM%20Bob%202.0-78a9ff.svg?style=flat-square)]()
 [![Artifact](https://img.shields.io/badge/Artifact-Change%20Proof%20v1.0-8a3ffc.svg?style=flat-square)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict%20Mode-3178c6.svg?style=flat-square)]()
+[![Live App](https://img.shields.io/badge/Deployment-Live%20on%20Vercel-black.svg?style=flat-square&logo=vercel)](https://isomorph-frontend.vercel.app)
+
+---
+
+### Quick Access
+
+- **Live Application**: [https://isomorph-frontend.vercel.app](https://isomorph-frontend.vercel.app)
+- **GitHub Repository**: [https://github.com/gov11/isomorph-ibm-bob-2](https://github.com/gov11/isomorph-ibm-bob-2)
+- **Deployment Guide**: [`DEPLOYMENT.md`](./DEPLOYMENT.md)
+- **Local Runbook**: [`RUN_LOCAL.md`](./RUN_LOCAL.md)
+- **3-Minute Video Script**: [`DEMO.md`](./DEMO.md)
 
 ---
 
