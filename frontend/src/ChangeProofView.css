@@ -1,0 +1,816 @@
+/* ==========================================================================
+   CHANGE PROOF AUDIT ARTIFACT VIEW STYLESHEET
+   Disciplined, high-whitespace technical audit document aesthetic
+   ========================================================================== */
+
+.iso-proof-view {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #08090c;
+  color: #f4f6fa;
+  padding: 24px 20px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sticky top navigation */
+.iso-proof-nav {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.iso-proof-back-btn {
+  background: transparent;
+  border: 1px solid #282e3b;
+  color: #8f99a8;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.iso-proof-back-btn:hover {
+  color: #f4f6fa;
+  border-color: #3f4758;
+  background-color: #141820;
+}
+
+.iso-proof-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* The Main Audit Document Sheet */
+.iso-proof-document {
+  width: 100%;
+  max-width: 980px;
+  background-color: #0f1217;
+  border: 1px solid #232833;
+  padding: 48px 56px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* Document Header */
+.iso-doc-header {
+  border-bottom: 2px solid #252b38;
+  padding-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iso-doc-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #636d7e;
+}
+
+.iso-doc-brand {
+  font-weight: 600;
+  color: #0f62fe;
+}
+
+.iso-doc-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.iso-doc-title {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f4f6fa;
+  margin: 0;
+}
+
+.iso-doc-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.iso-doc-status-badge.attention {
+  border: 1px solid #fa4d56;
+  background-color: rgba(250, 77, 86, 0.08);
+  color: #ff8389;
+}
+
+.iso-doc-status-badge.verified {
+  border: 1px solid #24a148;
+  background-color: rgba(36, 161, 72, 0.08);
+  color: #42be65;
+}
+
+.iso-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.iso-doc-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background-color: #090b0e;
+  border: 1px solid #1c212a;
+  padding: 12px 16px;
+  margin-top: 8px;
+}
+
+.iso-doc-detail-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.iso-doc-detail-cell .label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  color: #636d7e;
+}
+
+.iso-doc-detail-cell .val {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #d1d7e2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Sections */
+.iso-doc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-bottom: 1px solid #1c212a;
+  padding-bottom: 32px;
+}
+
+.iso-doc-section.iso-section-final {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.iso-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.iso-section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: #0f62fe;
+}
+
+.iso-section-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #f4f6fa;
+  margin: 0;
+}
+
+.iso-prose {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #9aa4b2;
+  margin: 0;
+}
+
+/* Summary Box */
+.iso-summary-box {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iso-digest-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-bottom: 1px solid #1c212a;
+  padding-bottom: 14px;
+}
+
+.iso-digest-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.digest-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: #636d7e;
+}
+
+.digest-code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #0f62fe;
+  word-break: break-all;
+}
+
+.iso-metrics-summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  border-bottom: 1px solid #1c212a;
+  padding-bottom: 16px;
+}
+
+.iso-summary-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.iso-summary-metric .num {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  color: #f4f6fa;
+}
+
+.iso-summary-metric.accent .num {
+  color: #0f62fe;
+}
+
+.iso-summary-metric .desc {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: #798495;
+  line-height: 1.3;
+}
+
+.iso-symbols-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.symbols-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #636d7e;
+}
+
+.symbols-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.iso-symbol-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background-color: #090b0e;
+  border: 1px solid #232833;
+  padding: 2px 8px;
+  color: #c9d1d9;
+}
+
+.iso-symbol-tag.export {
+  border-color: #0f62fe;
+  color: #78a9ff;
+}
+
+/* Structural Evidence Table */
+.iso-structural-evidence-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iso-cst-stats-table {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  display: flex;
+  flex-direction: column;
+}
+
+.iso-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border-bottom: 1px solid #1c212a;
+  align-items: center;
+}
+
+.iso-table-row:last-child {
+  border-bottom: none;
+}
+
+.iso-table-row.header {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #636d7e;
+  background-color: #090b0e;
+}
+
+.iso-table-row .name {
+  color: #f4f6fa;
+  font-weight: 500;
+}
+
+.tag-ok {
+  color: #42be65;
+}
+
+.tag-collapsed {
+  color: #0f62fe;
+}
+
+/* Behavior Sensitive Regions */
+.iso-regions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iso-region-entry {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.iso-region-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iso-region-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iso-region-index {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #636d7e;
+}
+
+.iso-region-symbol {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: #f4f6fa;
+}
+
+.iso-region-node-id {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #636d7e;
+}
+
+.iso-region-finding {
+  display: flex;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+}
+
+.finding-label {
+  color: #798495;
+  font-weight: 500;
+}
+
+.finding-text {
+  color: #f4f6fa;
+}
+
+.iso-signals-list-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.iso-signal-pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  padding: 1px 6px;
+  background-color: #090b0e;
+  border: 1px solid #1c212a;
+  color: #ffaa6b;
+}
+
+.iso-region-code-diff {
+  background-color: #08090c;
+  border: 1px solid #1c212a;
+  padding: 10px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.diff-line {
+  display: flex;
+  gap: 8px;
+}
+
+.diff-line.before {
+  color: #ff8389;
+}
+
+.diff-line.after {
+  color: #42be65;
+}
+
+/* Repository Context */
+.iso-context-card {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.iso-context-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.context-prop {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #636d7e;
+}
+
+.context-desc {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #c9d1d9;
+  margin: 0;
+}
+
+/* Verification Evidence & Tests */
+.iso-evidence-card {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  display: flex;
+  flex-direction: column;
+}
+
+.iso-evidence-status-header {
+  padding: 12px 18px;
+  border-bottom: 1px solid #232833;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #090b0e;
+}
+
+.iso-env-meta {
+  display: flex;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #636d7e;
+}
+
+.iso-evidence-badge.fail {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  border: 1px solid #fa4d56;
+  background-color: rgba(250, 77, 86, 0.08);
+  color: #ff8389;
+  padding: 2px 8px;
+}
+
+.iso-test-result-block {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.iso-test-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.test-name {
+  color: #d1d7e2;
+  font-weight: 600;
+}
+
+.test-duration {
+  color: #636d7e;
+}
+
+.test-status.fail {
+  color: #ff8389;
+  font-weight: 600;
+}
+
+.test-status.pass {
+  color: #42be65;
+  font-weight: 600;
+}
+
+.iso-assertion-failure {
+  background-color: rgba(250, 77, 86, 0.06);
+  border: 1px solid rgba(250, 77, 86, 0.3);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #ff8389;
+  display: flex;
+  gap: 8px;
+}
+
+.fail-tag {
+  font-weight: 600;
+}
+
+.iso-test-code-view {
+  background-color: #08090c;
+  border: 1px solid #1c212a;
+  padding: 12px;
+}
+
+.iso-test-code-view pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: #c9d1d9;
+}
+
+.iso-no-evidence {
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #636d7e;
+}
+
+/* IBM Bob AI Reasoning */
+.iso-bob-card {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iso-bob-disclaimer {
+  background-color: #090b0e;
+  border: 1px solid #1c212a;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.4;
+  color: #798495;
+  display: flex;
+  gap: 8px;
+}
+
+.disclaimer-title {
+  color: #0f62fe;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.iso-bob-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.iso-bob-meta {
+  display: flex;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #636d7e;
+  border-bottom: 1px solid #1c212a;
+  padding-bottom: 6px;
+}
+
+.iso-bob-meta .symbol {
+  color: #f4f6fa;
+  font-weight: 600;
+}
+
+.iso-bob-meta .conf {
+  color: #42be65;
+}
+
+.iso-bob-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #636d7e;
+}
+
+.field-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: #f4f6fa;
+  margin: 0;
+}
+
+.field-text.impact {
+  border-left: 2px solid #ff832b;
+  padding-left: 10px;
+  color: #ffaa6b;
+}
+
+/* Residual Uncertainty */
+.iso-uncertainty-card {
+  background-color: #14171e;
+  border: 1px solid #232833;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.iso-uncertainty-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iso-uncertainty-list li {
+  display: flex;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #c9d1d9;
+}
+
+.iso-uncertainty-list .bullet {
+  font-family: var(--font-mono);
+  color: #636d7e;
+  font-size: 11px;
+}
+
+/* Proof Hash & Provenance Artifact Box */
+.iso-hash-artifact-box {
+  background-color: #090b0e;
+  border: 1px solid #0f62fe;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.iso-hash-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hash-title {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #0f62fe;
+}
+
+.hash-value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: #f4f6fa;
+  word-break: break-all;
+  background-color: #14171e;
+  padding: 10px 14px;
+  border: 1px solid #232833;
+}
+
+.hash-expl {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: #798495;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.iso-provenance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  border-top: 1px solid #1c212a;
+  padding-top: 16px;
+}
+
+.iso-prov-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.iso-prov-item .k {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: #636d7e;
+}
+
+.iso-prov-item .v {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #c9d1d9;
+}
+
+/* Document Footer */
+.iso-doc-footer {
+  border-top: 1px solid #1c212a;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: #4b5463;
+}
+
+/* Print Friendly Rules */
+@media print {
+  .iso-proof-nav {
+    display: none;
+  }
+  .iso-proof-view {
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+  }
+  .iso-proof-document {
+    box-shadow: none;
+    border: none;
+    background: #ffffff;
+    color: #000000;
+    padding: 0;
+  }
+}

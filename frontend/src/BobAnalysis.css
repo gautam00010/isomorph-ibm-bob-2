@@ -1,0 +1,426 @@
+/* ==========================================================================
+   IBM BOB CONTEXT-AWARE ANALYSIS COMPONENT STYLESHEET
+   Disciplined, expert reasoning layer inside a verification instrument
+   ========================================================================== */
+
+.iso-bob-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   TRUTH DELINEATION STRIP (FACT VS INTERPRETATION)
+   ========================================================================== */
+.iso-truth-delineation-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #090b0e;
+  border: 1px solid var(--c-border-medium);
+  padding: 10px 16px;
+  gap: 12px;
+}
+
+.iso-truth-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.iso-truth-kicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--c-text-muted);
+}
+
+.iso-truth-claim {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.iso-truth-side.fact .iso-truth-claim {
+  color: #c9d1d9;
+}
+
+.iso-truth-side.interpretation .iso-truth-claim {
+  color: var(--c-ibm-blue);
+}
+
+.iso-truth-sub {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--c-text-muted);
+}
+
+.iso-truth-arrow {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--c-text-muted);
+  user-select: none;
+}
+
+/* ==========================================================================
+   DETERMINISTIC FACT CARD
+   ========================================================================== */
+.iso-fact-card {
+  background-color: var(--c-surface-elevated);
+  border: 1px solid var(--c-border-medium);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.iso-fact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-border-subtle);
+  padding-bottom: 8px;
+}
+
+.iso-fact-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iso-fact-tag {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  background-color: #090b0e;
+  border: 1px solid var(--c-border-strong);
+  color: #c9d1d9;
+}
+
+.iso-fact-symbol {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--c-text-primary);
+}
+
+.iso-fact-node-id {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-text-muted);
+}
+
+.iso-fact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.iso-fact-detail {
+  display: flex;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+.iso-fact-detail .label {
+  color: var(--c-text-muted);
+}
+
+.iso-fact-detail .value {
+  color: var(--c-text-primary);
+  font-weight: 500;
+}
+
+.iso-fact-signals {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iso-fact-signals .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-text-muted);
+}
+
+.iso-fact-signals .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.iso-fact-code-diff {
+  background-color: var(--c-surface-code);
+  border: 1px solid var(--c-border-subtle);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.diff-row {
+  display: flex;
+  gap: 8px;
+}
+
+.diff-row.before {
+  color: var(--c-risk-high-text);
+}
+
+.diff-row.after {
+  color: #42be65;
+}
+
+.diff-row .sign {
+  width: 10px;
+  user-select: none;
+}
+
+/* ==========================================================================
+   IBM BOB CONTEXT-AWARE ANALYSIS CARD
+   ========================================================================== */
+.iso-bob-analysis-card {
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border-medium);
+  border-top: 2px solid var(--c-ibm-blue);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.iso-bob-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-border-subtle);
+  padding-bottom: 12px;
+}
+
+.iso-bob-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.iso-bob-brand {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--c-ibm-blue);
+}
+
+.iso-bob-subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--c-text-secondary);
+}
+
+.iso-bob-provenance-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iso-model-pill,
+.iso-ir-pill,
+.iso-cache-pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--c-text-muted);
+  border: 1px solid var(--c-border-subtle);
+  padding: 1px 6px;
+  background-color: var(--c-surface-elevated);
+}
+
+.iso-confidence-pill {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 1px 6px;
+}
+
+.iso-confidence-pill.high {
+  color: #42be65;
+  border: 1px solid rgba(66, 190, 101, 0.4);
+  background-color: rgba(66, 190, 101, 0.06);
+}
+
+.iso-confidence-pill.medium {
+  color: #ffaa6b;
+  border: 1px solid rgba(255, 170, 107, 0.4);
+}
+
+.iso-confidence-pill.low {
+  color: #fddc69;
+  border: 1px solid rgba(253, 220, 105, 0.4);
+}
+
+/* Bob Fields */
+.iso-bob-panel-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.iso-field-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.iso-field-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-ibm-blue);
+  font-weight: 600;
+}
+
+.iso-field-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--c-text-secondary);
+}
+
+.iso-ast-tag {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  color: #42be65;
+  border: 1px solid rgba(66, 190, 101, 0.4);
+  padding: 0 5px;
+  margin-left: auto;
+}
+
+.iso-bob-box {
+  background-color: var(--c-surface-elevated);
+  border: 1px solid var(--c-border-medium);
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--c-text-primary);
+}
+
+.iso-bob-box p {
+  margin: 0;
+}
+
+.iso-bob-box.impact {
+  border-left: 3px solid #ff832b;
+  color: #f4f6fa;
+}
+
+.iso-bob-box.recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rec-text {
+  color: var(--c-text-secondary);
+  font-size: 12px;
+}
+
+.iso-test-stub-block {
+  background-color: var(--c-surface-code);
+  border: 1px solid var(--c-border-medium);
+  padding: 10px 12px;
+}
+
+.iso-test-stub-block pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+  color: #c9d1d9;
+}
+
+/* Evidence References Box */
+.iso-bob-box.references {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.iso-ref-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ref-k {
+  color: var(--c-text-muted);
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.ref-v {
+  color: #78a9ff;
+  word-break: break-all;
+}
+
+/* Residual Uncertainties Box */
+.iso-bob-box.uncertainties {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--c-text-secondary);
+}
+
+.iso-bob-box.uncertainties ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.iso-bob-box.uncertainties li {
+  margin-bottom: 3px;
+}
+
+/* Fallback State */
+.iso-bob-analysis-fallback {
+  background-color: var(--c-surface-elevated);
+  border: 1px solid var(--c-border-medium);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iso-fallback-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iso-bob-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--c-ibm-blue);
+  border: 1px solid var(--c-ibm-blue);
+  padding: 1px 6px;
+}
+
+.iso-fallback-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c-text-secondary);
+}
+
+.iso-fallback-msg {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--c-text-muted);
+  margin: 0;
+}

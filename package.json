@@ -1,0 +1,20 @@
+{
+  "name": "isomorph",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "demo": "node bin/demo.js",
+    "test": "npm run test --workspaces --if-present",
+    "test:engine": "npm run test --workspace=packages/engine",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "start:api": "npm run start --workspace=packages/api",
+    "dev:frontend": "npm run dev --workspace=frontend"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

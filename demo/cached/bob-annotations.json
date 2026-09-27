@@ -1,0 +1,62 @@
+{
+  "calculateDiscount": {
+    "explanation": "The guard clause preventing non-positive pricing was removed from calculateDiscount. When price is zero or negative, the original code returned 0; the new code returns a negative value. Callers that do not validate the return value will silently accept negative prices.",
+    "businessImpact": "Invoices and checkout baskets with promotional zero-dollar items will calculate negative balances, leading to revenue leakage and accounting reconciliation failures.",
+    "testStubs": [
+      "test('calculateDiscount handles zero or negative prices safely', () => {\n  const result = calculateDiscount(-5, 0.2);\n  expect(result).toBe(0);\n});"
+    ],
+    "uncertainties": [
+      "Cannot determine whether upstream checkout callers validate prices before invoking calculateDiscount"
+    ],
+    "evidenceReferences": [
+      "pricing/discount.js#calculateDiscount",
+      "pricing/discount.js#processOrderPricing"
+    ],
+    "confidence": "high"
+  },
+  "isValidPageIndex": {
+    "explanation": "The boundary comparison operator in isValidPageIndex was relaxed from >= totalPages to > totalPages, and strict null/undefined checks were replaced with loose equality. This introduces an off-by-one boundary vulnerability where index === totalPages is accepted as a valid page index.",
+    "businessImpact": "When callers invoke getPage with index === totalPages, an unhandled out-of-bounds array access occurs, resulting in undefined page content or runtime TypeError crashes during request processing.",
+    "testStubs": [
+      "test('isValidPageIndex rejects out-of-bounds index equal to totalPages', () => {\n  const valid = isValidPageIndex(5, 5);\n  expect(valid).toBe(false);\n});"
+    ],
+    "uncertainties": [
+      "Cannot determine whether callers perform external boundary clamping prior to isValidPageIndex invocation"
+    ],
+    "evidenceReferences": [
+      "pagination/bounds.js#isValidPageIndex",
+      "pagination/bounds.js#getPage"
+    ],
+    "confidence": "high"
+  },
+  "verifyToken": {
+    "explanation": "Security-critical token expiration validation (token.expiresAt < Date.now()) was completely removed from verifyToken. Any mathematically valid signature will now authenticate indefinitely, regardless of when the token expired.",
+    "businessImpact": "Expired session tokens, revoked credentials, and stale API bearer tokens can be indefinitely replayed by malicious actors, bypassing credential lifecycle management.",
+    "testStubs": [
+      "test('verifyToken rejects expired tokens even with valid signatures', () => {\n  const expiredToken = {\n    payload: 'user_101',\n    expiresAt: Date.now() - 3600000,\n    signature: computeExpectedSignature('user_101'),\n  };\n  const isValid = verifyToken(expiredToken);\n  expect(isValid).toBe(false);\n});"
+    ],
+    "uncertainties": [
+      "Cannot determine whether downstream gateway or proxy layers enforce token expiration prior to middleware execution"
+    ],
+    "evidenceReferences": [
+      "security/auth.js#verifyToken",
+      "security/auth.js#authorize"
+    ],
+    "confidence": "high"
+  },
+  "authorize": {
+    "explanation": "An unauthenticated role-based bypass (request.user.role === 'admin') was injected at the start of authorize prior to token verification, and multi-permission evaluation was degraded from strict conjunction (every) to disjunction (some).",
+    "businessImpact": "Clients spoofing an unverified request.user.role header completely bypass token verification, and users possessing read-only privileges automatically gain unauthorized access to write-protected endpoints.",
+    "testStubs": [
+      "test('authorize enforces strict conjunction of all required permissions', () => {\n  const validToken = {\n    payload: 'user_202',\n    expiresAt: Date.now() + 3600000,\n    signature: computeExpectedSignature('user_202'),\n  };\n  const request = {\n    headers: { 'authorization-token': validToken },\n    user: { role: 'member', permissions: ['read'] },\n  };\n  const result = authorize(request, ['read', 'write']);\n  expect(result.authorized).toBe(false);\n});"
+    ],
+    "uncertainties": [
+      "Cannot determine whether request.user is populated by an upstream trusted gateway or untrusted client headers"
+    ],
+    "evidenceReferences": [
+      "security/auth.js#authorize",
+      "security/auth.js#hasRequiredPermissions"
+    ],
+    "confidence": "high"
+  }
+}
