@@ -15,7 +15,7 @@
 | :--- | :--- | :--- | :--- |
 | **Frontend Web App** | Vercel | `https://isomorph-frontend.vercel.app` | **LIVE (Production Ready)** |
 | **Backend Fastify API** | Render / Node.js | `https://isomorph-api.onrender.com` (or local port 3000) | **Configured via Blueprint** |
-| **GitHub Repository** | GitHub | `https://github.com/gov11/isomorph-ibm-bob-2` | **Push Pending Auth** |
+| **GitHub Repository** | GitHub | `https://github.com/gautam00010/isomorph-ibm-bob-2` | **Public & Pushed** |
 
 ---
 

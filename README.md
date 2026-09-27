@@ -16,7 +16,7 @@
 ### Quick Access
 
 - **Live Application**: [https://isomorph-frontend.vercel.app](https://isomorph-frontend.vercel.app)
-- **GitHub Repository**: [https://github.com/gov11/isomorph-ibm-bob-2](https://github.com/gov11/isomorph-ibm-bob-2)
+- **GitHub Repository**: [https://github.com/gautam00010/isomorph-ibm-bob-2](https://github.com/gautam00010/isomorph-ibm-bob-2)
 - **Deployment Guide**: [`DEPLOYMENT.md`](./DEPLOYMENT.md)
 - **Local Runbook**: [`RUN_LOCAL.md`](./RUN_LOCAL.md)
 - **3-Minute Video Script**: [`DEMO.md`](./DEMO.md)
